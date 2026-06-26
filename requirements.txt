@@ -1,2 +1,9 @@
 torch --index-url https://pytorch.org
 streamlit
+streamlit
+torch --index-url https://pytorch.org
+transformers
+sentencepiece
+protobuf
+scikit-learn
+scipy
