@@ -1,0 +1,2 @@
+torch --index-url https://pytorch.org
+streamlit
