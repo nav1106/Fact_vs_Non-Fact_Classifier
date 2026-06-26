@@ -11,7 +11,7 @@ import os
 # ─── Page config ─────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Fact Classifier | SVM + T5",
-    page_icon="F",
+    page_icon="🔬",
     layout="centered",
 )
 
