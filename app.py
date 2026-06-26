@@ -278,8 +278,8 @@ def load_svm(_tokenizer, _encoder):
     search = RandomizedSearchCV(
         SVC(class_weight="balanced", random_state=42, probability=True),
         {"C": loguniform(1e-2, 1e2), "kernel": ["rbf", "linear"], "gamma": ["scale", "auto"]},
-        n_iter=10, cv=min(3, len(np.unique(y_train))),
-        scoring="f1_macro", n_jobs=-1, random_state=42,
+        n_iter=5, cv=min(3, len(np.unique(y_train))),
+        scoring="f1_macro", n_jobs=1, random_state=42,
     )
     search.fit(x_train, y_train)
     return search.best_estimator_, search.best_params_
