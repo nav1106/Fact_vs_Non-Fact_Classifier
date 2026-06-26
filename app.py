@@ -198,8 +198,9 @@ def attention_mean_pool(model, tokenizer, texts, batch_size=32):
 # ─── Load T5 encoder (cached) ─────────────────────────────────────────────────
 @st.cache_resource(show_spinner="Loading T5 encoder…")
 def load_t5():
-    tokenizer = T5Tokenizer.from_pretrained("t5-base")
-    encoder   = T5EncoderModel.from_pretrained("t5-base").to(DEVICE)
+    local_dir = "./t5_cache"
+    tokenizer = T5Tokenizer.from_pretrained("t5-base", cache_dir=local_dir)
+    encoder   = T5EncoderModel.from_pretrained("t5-base", cache_dir=local_dir).to(DEVICE)
     encoder.eval()
     return tokenizer, encoder
 
